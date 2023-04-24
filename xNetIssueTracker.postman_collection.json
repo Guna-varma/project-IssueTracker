@@ -1,0 +1,4866 @@
+{
+	"info": {
+		"_postman_id": "0866fd80-9bcb-4a66-ac9e-a67415ed8e72",
+		"name": "xNetIssueTracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22866408",
+		"_collection_link": "https://xnet-bug.postman.co/workspace/Team-Workspace~fb61046c-0f12-4603-8788-49999f2bf992/collection/22866408-0866fd80-9bcb-4a66-ac9e-a67415ed8e72?action=share&creator=22866408&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "RolesTable",
+			"item": [
+				{
+					"name": "add Roles Table",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addRolesTable(addRolesTableInput:{\r\n        name:\"Project\"\r\n    }){\r\n        id\r\n        name\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Roles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllRolesTable{\r\n        id\r\n        name\r\n    \r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Roles By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getRolesTableById(id:2){\r\n        id\r\n        name\r\n    }        \r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IssueType",
+			"item": [
+				{
+					"name": "/add Issue Type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addIssueType(addIssueTypeInput: {issueTypeName:\"issueType1\",\r\n    description:\"description1\"}){\r\n        id\r\n        description\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getAll Issue type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllIssueType{\r\n        id\r\n        description\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/get Issue type By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getIssueTypeById(id:1){\r\n            id\r\n            description\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/delete issue type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    deleteIssueType(id:3)\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Priority",
+			"item": [
+				{
+					"name": "add Priority",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addPriority(addPriorityInput: {\r\n        projectId:1,\r\n        priorityName:\"HIGH\"\r\n        description:\"High priority\",\r\n        iconColor:\"RED\",\r\n        statusColor:\"RED\"\r\n    }){\r\n        id\r\n        projectId\r\n        priorityName\r\n        description\r\n        iconColor\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPrioriry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllPriority{\r\n        id\r\n        projectId\r\n        priorityName\r\n        description\r\n        iconColor\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPriorityById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getPriorityById(id:1){\r\n        id\r\n        projectId\r\n        priorityName\r\n        description\r\n        iconColor\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete Priority By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    deletePriority(id:3)\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Issues",
+			"item": [
+				{
+					"name": "get All Issues",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllIssues{\r\n        id\r\n        attributeMultiLineString1\r\n        attributePickList1\r\n        attributeUserPickList1\r\n        projectId\r\n        issueTypeId\r\n        summary\r\n        attributeDate1\r\n        createdAt\r\n        updatedAt\r\n        description\r\n        attributeNumberField1\r\n        attributeNumericField1\r\n        attributeTextField1\r\n        attributeMultilineTextField2\r\n        attributeSingleLine1\r\n        attributeMultilineTextField1\r\n        attributeDate1\r\n        attributeDate2\r\n        reporter\r\n        assignee\r\n        priority\r\n        resolution\r\n        issueStatus\r\n        votes\r\n        watches\r\n        workflowId\r\n        issueType{\r\n            id\r\n            issueTypeName\r\n            description\r\n        }\r\n        project{\r\n            projectName\r\n            url\r\n            projectLead\r\n            projectDescription\r\n            projectKey\r\n            assigneeType\r\n        }\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Issues By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getIssuesById(id:1){\r\n        id\r\n        attributeNumberField1\r\n        projectId\r\n        summary\r\n        description\r\n        attributeSingleLine1\r\n        createdAt\r\n        attributeDate1\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add Issues using Display Value",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n  addIssues(\r\n    addIssuesInput: {\r\n      issuseDtoArrayList: [\r\n        { key: \"25c69639-16d6-4816-bb95-41b4a3959f47\",\r\n        keyColumnName:\"issueTypeId\"\r\n        value: \"2\" }\r\n        { \r\n            key: \"de2c2fb3-88fa-4696-b331-a1c2b38b3174\",\r\n            keyColumnName:\"projectId\"\r\n            value: \"2\" \r\n        }\r\n        {\r\n          key: \"11f8395f-0ccb-4c52-94e4-d3ac9221a5df\"\r\n          keyColumnName:\"description\"\r\n          value: \"Description for Issue 1\"\r\n        }\r\n        {\r\n          key: \"12bbd2e1-f37e-4880-9554-354e03d82e73\"\r\n          keyColumnName:\"summary\"\r\n          value: \"Summary key Issues1\"\r\n        }\r\n        {\r\n            key: \"055bdaaa-62c9-4a4e-9eef-127a50edd18d\",\r\n            keyColumnName: \"attributeDate1\"\r\n            value: \"2012-10-10\",\r\n        }\r\n        { \r\n            key: \"6cde82da-2f05-4e89-8ebd-79869f3dc718\",\r\n            keyColumnName: \"attributeNumericField1\"\r\n            value: \"8\" }\r\n      ]\r\n    }\r\n  ) {\r\n    id\r\n    attributeNumericField1\r\n    attributeDate1\r\n    projectId\r\n    createdAt\r\n    attributeSingleLine1\r\n    assignee\r\n    priority\r\n    resolution\r\n    attributePickList1\r\n    attributePickList2\r\n    attributeUserPickList1\r\n    votes\r\n    watches\r\n    workflowId\r\n  }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Issue By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    deleteIssues(id:3)\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Issues",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    updateIssues(id:4,updateIssuesInput:{\r\n        issuseDtoArrayList:[\r\n        \r\n            { \r\n                key: \"1d766b54-4a46-4a88-951a-74529e12e2f9\",\r\n                keyColumnName:\"assignee\"\r\n                keyDisplayName:\"assignee\"\r\n                value: \"201\" \r\n        }]\r\n        })\r\n        {\r\n            id\r\n            attributeNumericField1\r\n            assignee\r\n            issueTypeId\r\n            projectId\r\n            attributeDate1\r\n            createdAt\r\n            attributeSingleLine1\r\n            attributeMultiLineString1\r\n            assignee\r\n            priority\r\n            resolution\r\n            attributePickList1\r\n            attributeUserPickList1   \r\n            description\r\n            summary\r\n        }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql?key=2eceeac9-f701-47d2-ac3a-d005f5b1501f&keyColumnName=id&keyDisplayName=Id&value=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "2eceeac9-f701-47d2-ac3a-d005f5b1501f"
+								},
+								{
+									"key": "keyColumnName",
+									"value": "id"
+								},
+								{
+									"key": "keyDisplayName",
+									"value": "Id"
+								},
+								{
+									"key": "value",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagination Response",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    issuesPagination(page: 1, offset:10){\r\n        data{\r\n            id\r\n            assignee\r\n            summary\r\n            description\r\n            createdAt\r\n            updatedAt\r\n        },\r\n        pagination{\r\n            totalRecords\r\n            totalPerPage\r\n            totalPage\r\n            currentPage\r\n            nextPage\r\n            previousPage\r\n        }     \r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "get All Project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllProject {\r\n        id\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addProject(addProjectInput:{\r\n        projectName: \"Project4\"\r\nurl: \"sljfdgvyealjv\"\r\nprojectLead: \"Najib\"\r\nprojectDescription:\"Description for project 4\"\r\nprojectKey: \"aejygfreqilu\"\r\nassigneeType: 4\r\n    }){\r\n        id\r\n        projectDescription\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Project By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getProjectById(id:1){\r\n        id\r\n        projectDescription\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    updateProject(updateProjectInput:{\r\n        id:1, \r\n        assigneeType:1\r\n    }){\r\n        id\r\n    assigneeType\r\n    }\r\n    \r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Pagination",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    projectPagination(page: 1, offset:10){\r\n        data{\r\n            id\r\n            projectName\r\n            projectDescription\r\n        },\r\n        pagination{\r\n            totalRecords\r\n            totalPerPage\r\n            totalPage\r\n            currentPage\r\n            nextPage\r\n            previousPage\r\n        }     \r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Work Flow Table",
+			"item": [
+				{
+					"name": "add workflow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addWorkflow(workflowTableInput:{\r\n        name:\"work flow-2\"\r\n        description:\"Work flow description\"\r\n    }){\r\n        id\r\n        name\r\n        createdAt\r\n        updatedAt\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All work flow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllWorkflow{\r\n        id\r\n        name\r\n        description\r\n        \r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get work flow by Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getWorkflowById(id:1){\r\n        id\r\n        name\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transition Table",
+			"item": [
+				{
+					"name": "add Transition",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addTransitionTable(transitionTableInput:{\r\n        transitionName:\"Transition name-1\"\r\n        description:\"description-1\"\r\n        fromStepId:1\r\n        toStepId:1\r\n    }){\r\n        id\r\n        transitionName\r\n        description\r\n        \r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Transition",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllTransitionTable{\r\n        id\r\n        fromStepId\r\n        toStepId\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Transition By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getTransitionTableById(id:1){\r\n        id\r\n        transitionName\r\n        fromStepId\r\n        toStepId\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Resolution",
+			"item": [
+				{
+					"name": "add Resolution",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addResolution(addResolutionInput:{\r\n        projectId:  1\r\n        resolutionName:\"RESOLVED\"\r\n        description: \"description-1\"\r\n        iconUrl: \"kahtedvkwqeytc\"\r\n    }){\r\n        id\r\n        projectId\r\n        resolutionName\r\n        description\r\n        iconUrl\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All resolutions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllResolution{\r\n        id\r\n        projectId\r\n        resolutionName\r\n        description\r\n        iconUrl\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get resolution By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getResolutionById(id:1){\r\n        id\r\n        projectName\r\n        description\r\n        iconUrl\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Resolution",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    updateResolution(updateResolutionInput:{\r\n        id:1\r\n        resolutionName:\"UNRESOLVED\"\r\n    }){\r\n        id\r\n        projectId\r\n        resolutionName\r\n        description\r\n        iconUrl\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "workflow status",
+			"item": [
+				{
+					"name": "add workflow status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addWorkFlowStatus(workflowStatusInput:{\r\n        name:\"status-1\"\r\n        description:\"description-1\"}){\r\n        id\r\n        name\r\n        description\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All workflow status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllWorkflowStatus{\r\n        id\r\n        \r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All workflow status Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getWorkflowStatusById(id:1){\r\n        id\r\n        \r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "workflow step",
+			"item": [
+				{
+					"name": "add workflow step",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addWorkflowStepTable(workflowStepTableInput:{\r\n        linkedStatusId:1\r\n        stepName:\"step Name-1\"\r\n        workflowTableId:1\r\n    }){\r\n        id\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All workflow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllWorkflowStepTable\r\n    {\r\n        id\r\n        stepName\r\n        workflowStatus{\r\n            name\r\n        }\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get workflow step By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getWorkflowStepTableById(id:1){\r\n        id\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Status Name By WorkflowId",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\ngetStatusNameByWorkflowId(workflowTableId:1){\r\n    id\r\n    name\r\n    description\r\n\r\n}\r\n\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Template",
+			"item": [
+				{
+					"name": "AddTemplate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addTemplate(addTemplateInput:{\r\n        name:\"Default Template\",\r\n        description: \"Default Template for IssueTracker, Having xNetWorkFlow with IssueType as Bug, Task, Epic, SubTask \",\r\n        workflowId: 1\r\n    }){\r\n        id\r\n        name\r\n        description\r\n        workflowId\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddIssuseTypeInTemplate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\naddIssuetypeInTemplate(inTemplateDTO:{\r\n    templateId:2,\r\n    issuetypeIds:[1,2,3,4] \r\n})\r\n{\r\n  issuetypeId \r\n}\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Issues_User_Roles_Table",
+			"item": [
+				{
+					"name": "add Issue User Roles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addIssueUserRoles(addIssueUserRolesInput:{\r\n        user_id: 1\r\n        issue_id:2\r\n        role_id:2\r\n        })\r\n    {\r\n        id\r\n        user_id\r\n        issue_id\r\n        role_id\r\n    }\r\n\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll User_issues",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllIssueUserRoles{\r\n        id\r\n        user_id\r\n        issue_id\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get User issues By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getIssueUserRolesById(id:1){\r\n        id\r\n        user_id\r\n        issue_id\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project_User_Roles_Table",
+			"item": [
+				{
+					"name": "add Project_User_Roles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addProjectUserRole(addProjectUserRoleInput:{\r\n        userId:1\r\n        roleId:1\r\n        projectId:1\r\n    }){\r\n        id\r\n        userId\r\n        roleId\r\n        projectId\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Project User Roles By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getProjectUserRoleById(id:1){\r\n        id\r\n        userId\r\n        roleId\r\n        projectId\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll Project user Roles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllProjectUserRoles{\r\n        id\r\n        userId\r\n        roleId\r\n        projectId\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "/add user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addUser(addUserInput:{\r\n        userName:\"Guna\"\r\n        fullName:\"Guna varma\"\r\n        password:\"gunavarma@123\"\r\n        email:\"gunavarma@gmail.com\"\r\n        active:true\r\n    }){\r\n        id\r\n        userName\r\n        fullName\r\n        password\r\n        email\r\n        active\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    updateUser(updateUserInput:{id:1, userName:\"guna9\"}){\r\n        id\r\n        userName\r\n        fullName\r\n        password\r\n        email\r\n        active\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/get All User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllUser{\r\n        id\r\n        userName\r\n        fullName\r\n        password\r\n        email\r\n        active\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/get User By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getUserById(id:1){\r\n        id\r\n        userName\r\n        fullName\r\n        password\r\n        email\r\n        active\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagination",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    userPagination(page: 1, offset:10){\r\n        data{\r\n            id\r\n            userName\r\n            fullName\r\n            active\r\n            email\r\n            createdAt\r\n            updatedAt\r\n        },\r\n        pagination{\r\n            totalRecords\r\n            totalPerPage\r\n            totalPage\r\n            currentPage\r\n            nextPage\r\n            previousPage\r\n        }     \r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Attribute DIsplay Name",
+			"item": [
+				{
+					"name": "Add Attribute DIsplay Name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addAttributeDisplayName(addAttributeDisplayName:{\r\n            issueTypeId:1\r\n            attributeDisplayName: \"DAYS\" \r\n            dataTypeInfoId: 10\r\n            attributeKey:\"jecvwuec-sjhyvbewu-wsvbewi\"\r\n    }){\r\n        id\r\n        issueTypeId\r\n        attributeDisplayName\r\n        dataTypeInfoId\r\n\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All DIsplay Name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllAttributeDisplayName\r\n    {\r\n        id\r\n        issueTypeId\r\n        attributeDisplayName\r\n\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Attribute Data Type Info",
+			"item": [
+				{
+					"name": "Add Data Type Info",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addDataTypeInfo(addDatatype:{\r\n    dataTypeName:\"DATE TIME\"\r\n    }){\r\n        id\r\n        dataTypeName\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Data Type Info",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllDataTypeInfo{\r\n        id\r\n        dataTypeName\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Data Type Info By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getDataTypeInfoById(id:1){\r\n        id\r\n        dataTypeName\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Attribute ColumnName",
+			"item": [
+				{
+					"name": "Get ColumnName By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAttributeColumnNameInfoById(id: 1){\r\n        id\r\n        attributeColumnName\r\n        dataTypeInfoId\r\n        subscriptionTypeId\r\n        attributeKey\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ColumnName By Key Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAttributeColumnNameInfoByKeyId(attributeKey:\"2eceeac9-f701-47d2-ac3a-d005f5b1501f\"){\r\n        id\r\n        attributeColumnName\r\n        dataTypeInfoId\r\n        subscriptionTypeId\r\n        attributeKey\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Column Name Info",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllAttributeColumnNameInfo{\r\n        id\r\n        attributeColumnName\r\n        dataTypeInfoId\r\n        subscriptionTypeId\r\n        attributeKey\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Filtering",
+			"item": [
+				{
+					"name": "Integer",
+					"item": [
+						{
+							"name": "Greater Than",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"gt\",value: \"3\"}]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LessThan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"lt\",value: \"3\"}]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Equal",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"eq\",value: \"3\"}]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "greaterThan Equal",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"ge\",value: \"3\"}]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LessThan Equal",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"le\",value: \"3\"}]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Operations",
+					"item": [
+						{
+							"name": "String",
+							"item": [
+								{
+									"name": "CONTAINS",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"fullName\",operator:\"contains\",value: \"sha\"}]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "STARTS WITH",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"fullName\",operator:\"startsWith\",value: \"sha\"}]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ENDS WITH",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"fullName\",operator:\"endsWith\",value: \"kumar\"}]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "EQUAL",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"fullName\",operator:\"equal\",value: \"Guna Varma\"}]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "AND",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter:  {\r\n      predicate:\"AND\",\r\n      key:[{keyValue:\"userName\", operator:\"NOT\", value:\"Anand\"},\r\n            {keyValue:\"fullName\", operator:\"NOT\", value:\"Guna Varma\"}]\r\n  }) {\r\n            id\r\n            userName\r\n            fullName\r\n            email\r\n            password\r\n        }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "OR",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      predicate:\"OR\"\r\n      key: [{keyValue:\"password\",operator:\"contains\",value:\"An\"},\r\n            {keyValue:\"fullName\",operator:\"contains\",value:\"An\"}]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "NOT",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"userName\",operator:\"NOT\",value:\"Guna\"}]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RANGE",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"RANGE\",value:\"1\",rbValue:\"4\"}]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BETWEEN",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"BETWEEN\",value:\"1\",rbValue:\"4\"}]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "IN",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      key:{keyValue:\"userName\",operator:\"IN\",valuesIN:[\"Anand\", \"Guna\"]}}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AND inside IN",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      predicate:\"AND\"\r\n      key:[{keyValue:\"userName\",operator:\"IN\",valuesIN:[\"Anand\", \"Guna\"]}\r\n      {keyValue:\"fullName\",operator:\"IN\",valuesIN:[\"Guna varma\", \"Mitenajay Kumar\"]}\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "String",
+					"item": [
+						{
+							"name": "CONTAINS",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n    usersWithFilter(filter: {\r\n      key: [{keyValue:\"userName\",operator:\"contains\",value: \"s\"}]}) {\r\n    id\r\n   userName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "STARTS WITH",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"userName\",operator:\"startsWith\",value: \"Gu\"}]}) {\r\n    id\r\n   userName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ENDS WITH",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"fullName\",operator:\"endsWith\",value: \"Kalia\"}]}) {\r\n    id\r\n   userName\r\n   fullName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EQUAL",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  usersWithFilter(filter: {\r\n      key: [{keyValue:\"fullName\",operator:\"equal\",value: \"Akshay Kalia\"}]}) {\r\n    id\r\n   userName\r\n   fullName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Three Table Join",
+					"item": [
+						{
+							"name": "String",
+							"item": [
+								{
+									"name": "EQUAL",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"equal\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"project\"\r\n              column:\"projectName\"\r\n              value: \"Volmart\"\r\n          }\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CONTAINS",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"contains\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"project\"\r\n              column:\"projectName\"\r\n              value: \"Volmart\"\r\n          }\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "STARTS WITH",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"startsWith\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"project\"\r\n              column:\"projectName\"\r\n              value: \"xNet\"\r\n          }\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ENDS WITH",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"endsWith\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"project\"\r\n              column:\"projectName\"\r\n              value: \"mart\"\r\n          }\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Integer",
+							"item": [
+								{
+									"name": "GreaterThan",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"gt\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"project\"\r\n              column:\"id\"\r\n              value: \"4\"\r\n          }\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GreaterThan Equal",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"ge\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"project\"\r\n              column:\"id\"\r\n              value: \"4\"\r\n          }\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Equal",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"eq\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"project\"\r\n              column:\"id\"\r\n              value: \"4\"\r\n          }\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "LessThan",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"lt\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"project\"\r\n              column:\"id\"\r\n              value: \"2\"\r\n          }\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "LessThan Equal",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"le\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"project\"\r\n              column:\"id\"\r\n              value: \"4\"\r\n          }\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "RANGE",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n            operation:\"RANGE\",\r\n            joinTable1:\"project_user_roles_table\"\r\n            joinTable2:\"project\"\r\n            column:\"id\"\r\n            value: \"4\"\r\n            toValue:\"6\"\r\n          }\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "INT_BETWEEN",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n            operation:\"INT_BETWEEN\",\r\n            joinTable1:\"project_user_roles_table\"\r\n            joinTable2:\"project\"\r\n            column:\"id\"\r\n            value: \"4\"\r\n            toValue:\"6\"\r\n          }\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Join Operations",
+							"item": [
+								{
+									"name": "JOINS AND",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n            operation:\"INT_BETWEEN\",\r\n            joinTable1:\"project_user_roles_table\"\r\n            joinTable2:\"project\"\r\n            column:\"id\"\r\n            value: \"4\"\r\n            toValue:\"6\"\r\n          },{   \r\n              operation:\"equal\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"project\"\r\n              column:\"projectName\"\r\n              value: \"Volmart\"\r\n          }\r\n\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "JOINS OR",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:OR,\r\n      searchRequestDto:[\r\n          {  \r\n            operation:\"RANGE\",\r\n            joinTable1:\"project_user_roles_table\"\r\n            joinTable2:\"project\"\r\n            column:\"id\"\r\n            value: \"4\"\r\n            toValue:\"6\"\r\n          },{ \r\n              operation:\"equal\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"project\"\r\n              column:\"projectName\"\r\n              value: \"Volmart\"\r\n          }\r\n\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "JOINS NOT",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"equal\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"project\"\r\n              column:\"projectName\"\r\n              value: \"xnet jira\"\r\n          }\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "JOINS IN",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    userMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"IN\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"project\"\r\n              column:\"projectName\"\r\n              valuesIN: [\"xnet jira\", \"Voltas\"]\r\n          }\r\n      ]}) {\r\n    id\r\n    userName\r\n    fullName\r\n    email\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Issues Filtering",
+			"item": [
+				{
+					"name": "SEARCH",
+					"item": [
+						{
+							"name": "String",
+							"item": [
+								{
+									"name": "CONTAINS",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      key: [{keyValue:\"summary\",operator:\"contains\",value: \"BUG\"}]}) {\r\n    id\r\n   summary\r\n   assignee\r\n   priority\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "STARTS WITH",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      key: [{keyValue:\"priority\",operator:\"startsWith\",value: \"Hi\"}]}) {\r\n    id\r\n   summary\r\n   assignee\r\n   priority\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ENDS WITH",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      key: [{keyValue:\"priority\",operator:\"endsWith\",value: \"low\"}]}) {\r\n    id\r\n   summary\r\n   assignee\r\n   priority\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "EQUAL",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      key: [{keyValue:\"priority\",operator:\"equal\",value: \"LOW\"}]}) {\r\n    id\r\n   summary\r\n   assignee\r\n   priority\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Integer",
+							"item": [
+								{
+									"name": "Greater Than",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"gt\",value: \"3\"}]}) {\r\n    id\r\n    summary\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Less Than",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"lt\",value: \"3\"}]}) {\r\n    id\r\n    summary\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Equal",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"eq\",value: \"3\"}]}) {\r\n    id\r\n    summary\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GreaterThan Equal Copy",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"ge\",value: \"3\"}]}) {\r\n    id\r\n    summary\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Less Than Equal",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"le\",value: \"3\"}]}) {\r\n    id\r\n    summary\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Operations",
+							"item": [
+								{
+									"name": "AND",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter:  {\r\n      predicate:\"AND\",\r\n      key:[{keyValue:\"priority\", operator:\"NOT\", value:\"LOW\"},\r\n            {keyValue:\"assignee\", operator:\"contains\", value:\"Akshay Kalia\"}]\r\n  }) {\r\n            id\r\n            priority\r\n            assignee\r\n            summary\r\n            description\r\n        }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OR",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter:  {\r\n      predicate:\"OR\",\r\n      key:[{keyValue:\"assignee\", operator:\"contains\", value:\"shashi\"},\r\n            {keyValue:\"priority\", operator:\"contains\", value:\"HIGH\"}]\r\n  }) {\r\n            id\r\n            priority\r\n            assignee\r\n            summary\r\n            description\r\n        }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "NOT",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      key: [{keyValue:\"assignee\",operator:\"NOT\",value:\"Akshay\"}]}) {\r\n            id\r\n            priority\r\n            assignee\r\n            summary\r\n            description\r\n    \r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "RANGE",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"RANGE\",value:\"1\",rbValue:\"4\"}]}) {\r\n            id\r\n            priority\r\n            assignee\r\n            summary\r\n            description\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "BETWEEN",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      key: [{keyValue:\"attributeDate1\",operator:\"BETWEEN\",value:\"2020-01-01\",rbValue:\"2023-01-01\"}]}) {\r\n            id\r\n            priority\r\n            assignee\r\n            summary\r\n            description\r\n            attributeDate1\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "IN",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      key:{keyValue:\"priority\",operator:\"IN\",valuesIN:[\"LOW\", \"HIGH\"]}}) {\r\n    id\r\n            priority\r\n            assignee\r\n            summary\r\n            description\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AND inside IN Copy",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesWithFilter(filter: {\r\n      predicate:\"AND\"\r\n      key:[{keyValue:\"priority\",operator:\"IN\",valuesIN:[\"LOW\", \"HIGH\"]}\r\n      {keyValue:\"assignee\",operator:\"IN\",valuesIN:[\"Akshay Kalia\", \"Miteanjay Kumar\"]}\r\n      ]}) {\r\n            id\r\n            priority\r\n            assignee\r\n            summary\r\n            description\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "TWO TABLE JOINS",
+					"item": [
+						{
+							"name": "Integer",
+							"item": [
+								{
+									"name": "Join Eq",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:OR,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"id\"\r\n              value:\"2\"\r\n              joinTable:\"project\"\r\n              operation:\"eq\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    summary,\r\n    assignee\r\n    reporter,\r\n    project{\r\n        id\r\n        projectName\r\n    }\r\n    \r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Join GreaterThan",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"id\"\r\n              value:\"2\"\r\n              joinTable:\"project\"\r\n              operation:\"gt\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    summary,\r\n    assignee,\r\n    reporter,\r\n    project{\r\n        id\r\n        projectName\r\n    }\r\n    \r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Join LessThan",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"id\"\r\n              value:\"2\"\r\n              joinTable:\"project\"\r\n              operation:\"lt\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    summary,\r\n    assignee,\r\n    reporter,\r\n    project{\r\n        id\r\n        projectName\r\n    }\r\n    \r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Join GreaterThanEq",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"id\"\r\n              value:\"2\"\r\n              joinTable:\"project\"\r\n              operation:\"ge\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    summary,\r\n    assignee,\r\n    reporter,\r\n    project{\r\n        id\r\n        projectName\r\n    }\r\n    \r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Join LessThanEq",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"id\"\r\n              value:\"2\"\r\n              joinTable:\"project\"\r\n              operation:\"le\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    summary,\r\n    assignee,\r\n    reporter,\r\n    project{\r\n        id\r\n        projectName\r\n    }\r\n    \r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Join Range",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"id\"\r\n              value:\"2\"\r\n              toValue:\"3\"\r\n              joinTable:\"project\"\r\n              operation:\"RANGE\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    summary,\r\n    assignee,\r\n    reporter,\r\n    project{\r\n        id\r\n        projectName\r\n    }\r\n    \r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Join Int BETWEEN",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"id\"\r\n              value:\"2\"\r\n              toValue:\"3\"\r\n              joinTable:\"project\"\r\n              operation:\"INT_BETWEEN\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    summary,\r\n    assignee,\r\n    reporter,\r\n    project{\r\n        id\r\n        projectName\r\n    }\r\n    \r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Join Date BETWEEN",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"\"\r\n              value:\"\"\r\n              toValue:\"\"\r\n              joinTable:\"\"\r\n              operation:\"DATE_BETWEEN\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    summary,\r\n    assignee,\r\n    reporter,\r\n    project{\r\n        id\r\n        projectName\r\n    }\r\n    \r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "String",
+							"item": [
+								{
+									"name": "Join CONTAINS",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"projectName\"\r\n              value:\"Voltas\"\r\n              joinTable:\"project\"\r\n              operation:\"contains\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    summary,\r\n    projectId,\r\n    project{\r\n        id\r\n        projectName,\r\n        projectDescription\r\n        projectKey\r\n    }\r\n    \r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Join STARTSWITH",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"projectName\"\r\n              value:\"xNet\"\r\n              joinTable:\"project\"\r\n              operation:\"startsWith\"\r\n          },\r\n          \r\n      ]}) {\r\n    id,\r\n    summary,\r\n    project{\r\n        id\r\n        projectName\r\n        projectDescription\r\n        projectKey\r\n    }\r\n    \r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Join ENDSWITH",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"projectName\"\r\n              value:\"Jira\"\r\n              joinTable:\"project\"\r\n              operation:\"endsWith\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    summary,\r\n    project{\r\n        id\r\n        projectName\r\n        projectDescription\r\n        projectKey\r\n    }\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Join EQUAL",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"projectName\"\r\n              value:\"Voltas\"\r\n              joinTable:\"project\"\r\n              operation:\"equal\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    summary,\r\n    project{\r\n        id\r\n        projectName\r\n        projectDescription\r\n        projectKey\r\n    }\r\n    \r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Join Operations",
+							"item": [
+								{
+									"name": "Join AND",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"projectKey\"\r\n              value:\"VTS\"\r\n              joinTable:\"project\"\r\n              operation:\"contains\"\r\n          },\r\n          {\r\n              column:\"projectName\"\r\n              value:\"Voltas\"\r\n              joinTable:\"project\"\r\n              operation:\"contains\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    summary,\r\n    assignee,\r\n    reporter,\r\n    project{\r\n        id\r\n        projectName\r\n        projectKey\r\n    },\r\n    workflowTable{\r\n        id\r\n        name\r\n    }\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Join OR",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:OR,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"projectKey\"\r\n              value:\"DRDO\"\r\n              joinTable:\"project\"\r\n              operation:\"contains\"\r\n          },\r\n          {\r\n              column:\"projectName\"\r\n              value:\"Voltas\"\r\n              joinTable:\"project\"\r\n              operation:\"contains\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee,\r\n    summary,\r\n    project{\r\n        id\r\n        projectName\r\n        projectKey\r\n        projectDescription\r\n    }\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Join NOT",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:OR,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"projectName\"\r\n              value:\"Voltas\"\r\n              joinTable:\"project\"\r\n              operation:\"NOT\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    assignee,\r\n    summary,\r\n    project{\r\n        id\r\n        projectName\r\n        projectKey\r\n        projectDescription\r\n    }\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Join IN",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {\r\n              column:\"projectKey\"\r\n              valuesIN:[\"DRDO\", \"VTS\"]\r\n              joinTable:\"project\"\r\n              operation:\"IN\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee,\r\n    summary,\r\n    project{\r\n        id\r\n        projectName\r\n        projectKey\r\n        projectDescription\r\n    }\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "THREE TABLE JOINS",
+					"item": [
+						{
+							"name": "String",
+							"item": [
+								{
+									"name": "CONTAINS",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"contains\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Aks\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "EQUAL",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"equal\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Akshay kalia\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "STARTS WITH",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"startsWith\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Akshay\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ENDS WITH",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"endsWith\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Kalia\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Integer",
+							"item": [
+								{
+									"name": "GreaterThan",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"gt\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"2\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "LessThan",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"lt\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"4\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Equal",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"eq\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"3\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "LessThan Equal",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"le\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"3\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GreaterThan Equal",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"ge\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"4\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "RANGE",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"RANGE\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"1\"\r\n              toValue: \"3\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "INT_BETWEEN",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n            operation:\"INT_BETWEEN\",\r\n            joinTable1:\"issue_user_roles_table\"\r\n            joinTable2:\"user\"\r\n            column:\"id\"\r\n            value: \"1\"\r\n            toValue: \"3\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DATE_BETWEEN",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"DATE_BETWEEN\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"\"\r\n              value: \"\"\r\n              toValue: \"\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Join Operations",
+							"item": [
+								{
+									"name": "JOINS AND",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"contains\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Akshay\"\r\n          },\r\n          {  \r\n              operation:\"RANGE\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"1\"\r\n              toValue: \"4\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "JOINS OR",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:OR,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"contains\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Akshay\"\r\n          },\r\n          {  \r\n              operation:\"RANGE\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"1\"\r\n              toValue: \"2\"\r\n          }\r\n\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "JOINS NOT",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:OR,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"NOT\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Guna\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "JOINS IN",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n  issuesMultiJoinFilter(filter: {\r\n      globalOperator:OR,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"IN\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              valuesIN: [\"Akshay kalia\",\"Arjun\", \"Himanshu\",\"Miteanjay Kumar\"]\r\n          }\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Junction JOINS using IN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n  issueJunctionTableFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"IN\",\r\n              joinTable1:\"issue_user_roles_table\"\r\n              \r\n              joinTable2:\"user\"\r\n              column2:\"fullName\"\r\n              valuesIN:[\"Akshay kalia\", \"Shashi Kumar Yadav\"]\r\n\r\n              joinTable3:\"rolesTable\"\r\n              column3:\"name\"\r\n              value3:\"reporter\"             \r\n          }\r\n      ]}) {\r\n    id,\r\n    assignee\r\n    reporter\r\n    summary,\r\n    projectId\r\n  }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project Filtering",
+			"item": [
+				{
+					"name": "Integer",
+					"item": [
+						{
+							"name": "Greater Than",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"gt\",value: \"1\"}]}) {\r\n    id\r\n    projectName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LessThan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"lt\",value: \"3\"}]}) {\r\n    id\r\n    projectName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Equal",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"eq\",value: \"1\"}]}) {\r\n    id\r\n    projectName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "greaterThan Equal",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"ge\",value: \"1\"}]}) {\r\n    id\r\n    projectName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LessThan Equal",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"le\",value: \"1\"}]}) {\r\n    id\r\n    projectName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "String",
+					"item": [
+						{
+							"name": "CONTAINS",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter: {\r\n      key: [{keyValue:\"projectName\",operator:\"contains\",value: \"Jira\"}]}) {\r\n    id\r\n    projectName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "STARTS WITH",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter: {\r\n      key: [{keyValue:\"projectName\",operator:\"startsWith\",value: \"xNet\"}]}) {\r\n    id\r\n    projectName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ENDS WITH",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter: {\r\n      key: [{keyValue:\"projectName\",operator:\"endsWith\",value: \"Jira\"}]}) {\r\n    id\r\n    projectName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EQUAL",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter: {\r\n      key: [{keyValue:\"projectName\",operator:\"equal\",value: \"Voltas\"}]}) {\r\n    id\r\n    projectName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Operations",
+					"item": [
+						{
+							"name": "AND",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter:  {\r\n      predicate:\"AND\",\r\n      key:[{keyValue:\"projectName\", operator:\"NOT\", value:\"LOW\"},\r\n            {keyValue:\"projectKey\", operator:\"contains\", value:\"A\"}]\r\n  }) {\r\n            id\r\n            projectName\r\n            projectKey\r\n        }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "OR",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter:  {\r\n      predicate:\"OR\",\r\n      key:[{keyValue:\"projectName\", operator:\"NOT\", value:\"LOW\"},\r\n            {keyValue:\"projectKey\", operator:\"contains\", value:\"A\"}]\r\n  }) {\r\n            id\r\n            projectName\r\n            projectKey\r\n        }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "NOT",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter: {\r\n      key: [{keyValue:\"projectName\",operator:\"NOT\",value:\"Voltas\"}]}) {\r\n            id\r\n            projectName\r\n            projectKey\r\n            projectDescription\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RANGE",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter: {\r\n      key: [{keyValue:\"id\",operator:\"RANGE\",value:\"1\",rbValue:\"4\"}]}) {\r\n            id\r\n            projectName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BETWEEN",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  issuesWithFilter(filter: {\r\n      key: [{keyValue:\"attributeDate1\",operator:\"BETWEEN\",value:\"2020-01-01\",rbValue:\"2023-01-01\"}]}) {\r\n            id\r\n            priority\r\n            assignee\r\n            summary\r\n            description\r\n            attributeDate1\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "IN",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter: {\r\n      key:{keyValue:\"projectName\",operator:\"IN\",valuesIN:[\"Voltas\", \"JIRA\"]}}) {\r\n    id\r\n    projectName\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AND inside IN Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "{\r\n  projectWithFilter(filter: {\r\n      predicate:\"AND\"\r\n      key:[{keyValue:\"projectName\",operator:\"IN\",valuesIN:[\"LOW\", \"HIGH\"]}\r\n      {keyValue:\"id\",operator:\"projectKey\",valuesIN:[\"VTS\", \"DRDO\"]}\r\n      ]}) {\r\n            id\r\n            projectName\r\n            projectDescription\r\n  }\r\n}",
+										"variables": ""
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1001/graphql",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1001",
+									"path": [
+										"graphql"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ThreeTable Join",
+					"item": [
+						{
+							"name": "String",
+							"item": [
+								{
+									"name": "CONTAINS",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"contains\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Aks\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "EQUAL",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"equal\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Miteanjay Kumar\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "STARTS WITH",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"startsWith\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Miteanjay\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ENDS WITH",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"endsWith\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Kumar\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Integer",
+							"item": [
+								{
+									"name": "Equal",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"eq\"\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"4\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GreaterThan",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"eq\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"4\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "LessThan",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"lt\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"4\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "LessThan Equal",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"le\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"2\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GreaterThan Equal",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"ge\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"4\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "RANGE",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"RANGE\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"2\"\r\n              toValue:\"4\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "INT_BETWEEN",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"INT_BETWEEN\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"3\"\r\n              toValue:\"4\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "DATE_BETWEEN",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"DATE_BETWEEN\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"\"\r\n              value: \"\"\r\n              toValue:\"\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Join Operations",
+							"item": [
+								{
+									"name": "Joins AND",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"contains\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Aks\"\r\n          },\r\n          {  \r\n              operation:\"RANGE\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"2\"\r\n              toValue:\"4\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Joins OR",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:OR,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"contains\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Aks\"\r\n          },\r\n          {  \r\n              operation:\"RANGE\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"id\"\r\n              value: \"1\"\r\n              toValue:\"3\"\r\n          }\r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Joins NOT",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"NOT\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"fullName\"\r\n              value: \"Aks\"\r\n          }  \r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Joins IN",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "{\r\n    projectMultiJoinFilter(filter: {\r\n      globalOperator:AND,\r\n      searchRequestDto:[\r\n          {  \r\n              operation:\"IN\",\r\n              joinTable1:\"project_user_roles_table\"\r\n              joinTable2:\"user\"\r\n              column:\"userName\"\r\n              valuesIN: [\"Shashi\", \"Miteanjay\",\"Askh\"]\r\n          }  \r\n      ]}) {\r\n    id,\r\n    projectName\r\n    projectKey\r\n    projectDescription\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:1001/graphql",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "1001",
+											"path": [
+												"graphql"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Dynamic addAdminData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n    addAdminData\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

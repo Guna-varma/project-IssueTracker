@@ -1,0 +1,605 @@
+{
+	"info": {
+		"_postman_id": "9b3e095f-7bc1-40e0-8570-501584af15dc",
+		"name": "AUTOMATION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22866408"
+	},
+	"item": [
+		{
+			"name": "IssueTrigger",
+			"item": [
+				{
+					"name": "Add IssueTrigger",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addIssueTrigger(issueTriggerInput:{\r\n                name:\"Issue \",\r\n                description:\"IssueTrigger6\"}){\r\n                    id\r\n                    name\r\n                    description\r\n                }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll Issue Trigger",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllIssueTrigger{\r\n        id\r\n        name\r\n        description\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Issue Trigger By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getIssueTriggerById(id:1){\r\n        id\r\n        name\r\n        description\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Issue Trigger By Name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getTriggerIdByName(name:\"trigger4\"){\r\n        id\r\n        name\r\n        description\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post Function",
+			"item": [
+				{
+					"name": "Add Post Function",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addPostFunction(postFunctionInput:{\r\n        name:\"Edit Issue\"\r\n        description:\"Update Certain issue fields\"\r\n        postFunctionKey:\"editIssue\"\r\n    }){\r\n      id\r\n      name\r\n      description\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Post Functions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllPostFunction{\r\n      id\r\n      name\r\n      description\r\n      postFunctionKey\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post Function By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getPostFunctionById(id:2){\r\n      id\r\n      name\r\n      description\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post Function By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    deletePostFunction(id:5)\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Condition Table",
+			"item": [
+				{
+					"name": "Add Condition Table",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addCondition(conditionInput:{\r\n        conditionName:\"assignee\"\r\n        definition:\"if assignee == null\"\r\n        conditionValue:null\r\n    }){\r\n        id\r\n        conditionName\r\n        conditionValue\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll Conditions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllCondition\r\n    {\r\n        id\r\n        conditionName\r\n        definition\r\n        conditionValue\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Condition By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getConditionById(id:1)\r\n    {\r\n        id\r\n        conditionName\r\n        definition\r\n        conditionValue\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rule Table",
+			"item": [
+				{
+					"name": "Add Rule Table",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    addRuleTable(ruleTableInput:{\r\n        name:\"\"\r\n        ownerId:\"\"\r\n        issueTriggerId:\"\"\r\n        conditionTableId:\"\"\r\n        postFunctionId:\"\"\r\n        description:\"\"\r\n        actionLevel:\"\"\r\n        category:\"\"\r\n        configurationData:\"\"\r\n    })\r\n    {\r\n        name\r\n    ownerId\r\n    issueTriggerId\r\n    conditionTableId\r\n    postFunctionId\r\n    createdAt\r\n    updatedAt\r\n    description\r\n    actionLevel\r\n    category\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Rule Table",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n  getAllRuleTable  \r\n    {\r\n        name\r\n    ownerId\r\n    issueTriggerId\r\n    conditionTableId\r\n    postFunctionId\r\n    createdAt\r\n    updatedAt\r\n    description\r\n    actionLevel\r\n    category\r\n    configurationData\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rule Table By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n  getRuleTableById(id:6)  \r\n    {\r\n        name\r\n    ownerId\r\n    issueTriggerId\r\n    conditionTableId\r\n    postFunctionId\r\n    createdAt\r\n    updatedAt\r\n    description\r\n    actionLevel\r\n    category\r\n    configurationData\r\n    \r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Issues CRUD",
+			"item": [
+				{
+					"name": "get All Issues",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getAllIssues{\r\n        id\r\n        attributeMultiLineString1\r\n        attributePickList1\r\n        attributeUserPickList1\r\n        projectId\r\n        issueTypeId\r\n        summary\r\n        attributeDate1\r\n        createdAt\r\n        updatedAt\r\n        description\r\n        attributeNumberField1\r\n        attributeNumericField1\r\n        attributeTextField1\r\n        attributeMultilineTextField2\r\n        attributeSingleLine1\r\n        attributeMultilineTextField1\r\n        attributeDate1\r\n        attributeDate2\r\n        reporter\r\n        assignee\r\n        priority\r\n        resolution\r\n        issueStatus\r\n        votes\r\n        watches\r\n        workflowId\r\n        issueType{\r\n            id\r\n            issueTypeName\r\n            description\r\n        }\r\n        project{\r\n            projectName\r\n            url\r\n            projectLead\r\n            projectDescription\r\n            projectKey\r\n            assigneeType\r\n        }\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Issues By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    getIssuesById(id:1){\r\n        id\r\n        attributeNumberField1\r\n        projectId\r\n        summary\r\n        description\r\n        attributeSingleLine1\r\n        createdAt\r\n        attributeDate1\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add Issues using Display Value",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\r\n  addIssues(\r\n    addIssuesInput: {\r\n      issuseDtoArrayList: [\r\n        { \r\n          key: \"371dfcff-8dcc-4800-932c-73f83c5dbd33\",\r\n          keyColumnName:\"issueTypeId\"\r\n          value: \"2\"\r\n        },\r\n        { \r\n          key: \"b87b41c4-fa51-44ce-a3da-cd308565fa07\",\r\n          keyColumnName:\"projectId\"\r\n          value: \"2\" \r\n        },\r\n        {\r\n          key: \"552471a4-aa68-4808-8abf-fcc27a8b16cf\"\r\n          keyColumnName:\"description\"\r\n          value: \"Description for Issue 1\"\r\n        },\r\n        {\r\n          key: \"ff9f4dad-f211-41ae-ba9b-d2f3b77b941a\"\r\n          keyColumnName:\"summary\"\r\n          value: \"Summary key Issues1\"\r\n        },\r\n        { \r\n          key: \"4b5979f7-40b5-4642-8863-3711f66fe4e7\",\r\n          keyColumnName: \"priority\"\r\n          value: \"HIGH\" \r\n        },\r\n        { \r\n          key: \"e77fb1fd-3046-410d-8577-9c17308821e4\",\r\n          keyColumnName: \"resolution\"\r\n          value: \"UnResolved\" \r\n        },\r\n        { \r\n          key: \"25d3e8c3-f297-47d7-8a71-751b42d1a6ae\",\r\n          keyColumnName: \"assignee\"\r\n          value: \"Arjun Palvai\" \r\n        }\r\n      ]\r\n    }\r\n  ) {\r\n    id\r\n    assignee\r\n    priority\r\n    projectId\r\n    resolution\r\n  }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Issue By Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    deleteIssues(id:3)\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Issues",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation{\r\n    updateIssues(id:1,updateIssuesInput:{\r\n        issuseDtoArrayList:[\r\n            # { \r\n            #     key: \"25d3e8c3-f297-47d7-8a71-751b42d1a6ae\",\r\n            #     keyColumnName:\"assignee\"\r\n            #     keyDisplayName:\"assignee\"\r\n            #     value: \"Guna Varma\"\r\n            # },\r\n            {\r\n                key: \"67209a03-06f6-4b02-ab1b-dd792cedfbc9\",\r\n                keyColumnName:\"issueStatus\"\r\n                keyDisplayName:\"issueStatus\"\r\n                value: \"IN Complete\"\r\n            },\r\n            {\r\n                key: \"e77fb1fd-3046-410d-8577-9c17308821e4\",\r\n                keyColumnName:\"resolution\"\r\n                keyDisplayName:\"resolution\"\r\n                value: \"Un Resolved\"\r\n            }\r\n            ]\r\n        })\r\n        {\r\n            id\r\n            assignee\r\n            priority\r\n            resolution\r\n            issueStatus\r\n            issueTypeId\r\n            projectId\r\n            resolution\r\n        }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "2eceeac9-f701-47d2-ac3a-d005f5b1501f",
+									"disabled": true
+								},
+								{
+									"key": "keyColumnName",
+									"value": "id",
+									"disabled": true
+								},
+								{
+									"key": "keyDisplayName",
+									"value": "Id",
+									"disabled": true
+								},
+								{
+									"key": "value",
+									"value": "4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pagination Response",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\r\n    issuesPagination(page: 1, offset:10){\r\n        data{\r\n            id\r\n            assignee\r\n            summary\r\n            description\r\n            createdAt\r\n            updatedAt\r\n        },\r\n        pagination{\r\n            totalRecords\r\n            totalPerPage\r\n            totalPage\r\n            currentPage\r\n            nextPage\r\n            previousPage\r\n        }     \r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1001/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1001",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Json Request of configurationData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cc\": \"r.reddy@gmail.com\",\r\n    \"to\": [\r\n        9,\r\n        6\r\n    ],\r\n    \"bcc\": \"somiya.parmar@cubastion.com\",\r\n    \"content\": \"Send Mail, if priority is low\",\r\n    \"subject\": \"SEND MAIL TO ROLES\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
